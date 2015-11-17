@@ -1,4 +1,29 @@
 //- includes/header.jade
 
-header
-    h1 Head par defaut de ma maquette
+header.header
+    h1.hidden Title de ma page
+    div.header__logo
+        if current.main
+            h2.gamma 
+                a(href="index.html") Konk-Skreen
+        else
+            h2.gamma 
+                a(href="../index.html") Konk-Skreen
+    div.header__search
+        form(method="post").search__form
+            div.search__form--input
+                input(type="text", placeholder="Rechercher")
+            div.search__form--submit
+                input(type="submit")
+    div.header__account
+        h3.epsilon Mon Konk-Skreen
+        if current.main
+            div.account__login
+                a(href="html/login.html") Se connecter
+            div.account__register
+                a(href="html/register.html") S'enregistrer
+        else
+            div.account__login
+                a(href="login.html") Se connecter
+            div.account__register
+                a(href="register.html") S'enregistrer
